@@ -39,7 +39,7 @@ export const AddFreq = async (req, res) => {
     const freq = findCounter.totalTasks.find(
       (task) => task.date === specificDate.toDateString()
     );
-
+    
     if (freq) {
       freq.count = req.params.count;
       await findCounter.save();
